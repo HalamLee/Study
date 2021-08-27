@@ -1,0 +1,19 @@
+body {
+  background-color: salmon;
+}
+
+h2 {
+  color: white;
+}
+
+.small {
+  background-color: skyblue;
+}
+
+.medium {
+  background-color: orange;
+}
+
+.big {
+  background-color: purple;
+}
