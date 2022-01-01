@@ -11,12 +11,12 @@
     "ansi-regex": "^6.0.1",
     "expo": "~42.0.1",
     "expo-status-bar": "~1.0.4",
-    "node-fetch": "2.6.1",
+    "node-fetch": "^3.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "0.64.1",
     "react-native-web": "~0.13.12",
-    "xmldom": "0.6.0"
+    "xmldom": "^0.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
