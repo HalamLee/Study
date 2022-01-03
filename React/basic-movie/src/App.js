@@ -1,20 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function App() {
-  const onSubmit = () => {
-    alert('submitted');
-  };
-
-  const onKeyUp = (event) => {
-    if (event.keyCode === 13) {
-      onSubmit();
-    }
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const onSubmit = (event) => {
+    event.preventDefault();
+    console.log(username, password);
   };
 
   return (
     <div className="App">
-      <input onKeyUp={onKeyUp} />
-      <button onClick={onSubmit}>Submit</button>
+      <form onSubmit={onSubmit}>
+        <input
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <br />
+        <button type="submit">Login</button>
+      </form>
     </div>
   );
 }
