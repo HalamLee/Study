@@ -1,12 +1,8 @@
-import Plus from './component/plus/Plus';
+import TodoList from './page/todolist/TodoList';
 import './App.css';
 
 function App() {
-  return (
-    <>
-      <Plus></Plus>
-    </>
-  );
+  return <TodoList></TodoList>;
 }
 
 export default App;
