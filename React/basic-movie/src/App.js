@@ -1,18 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './index.css';
 function App() {
-  const [condition, setCondition] = useState(false);
-  const toggle = () => setCondition(!condition);
-  useEffect(() => {
-    console.log('condition :>> ', condition);
-  }, [condition]);
-  const renderCondition = condition ? 'True' : 'False';
+  const movies = [
+    { title: 'Lami1', year: 2001 },
+    { title: 'Lami2', year: 2002 },
+    { title: 'Lami3', year: 2003 },
+  ];
+  const renderMovies = movies.map((movie) => {
+    return (
+      <div className="movie" key={movie.title}>
+        <div className="movie-title">{movie.title}</div>
+        <div className="movie-year">{movie.year}</div>
+      </div>
+    );
+  });
 
   return (
     <div className="App">
-      <h1>Lami</h1>
-      <div>{renderCondition}</div>
-      <button onClick={toggle}>Toggle</button>
+      <h1>Movie list</h1>
+      {renderMovies}
     </div>
   );
 }
