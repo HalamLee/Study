@@ -1,10 +1,8 @@
 import React from 'react';
 import './index.css';
-
 import Navbar from './components/Navbar';
-import Users from './pages/Users';
-import Home from './pages/Home';
-import Movies from './pages/Movies';
+import routes from './routes';
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -14,15 +12,13 @@ function App() {
         <Navbar />
         <div className="container">
           <Switch>
-            <Route path="/movies">
-              <Movies />
-            </Route>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/users">
-              <Users />
-            </Route>
+            {routes.map((route) => {
+              return (
+                <Route key={route.path} path={route.path} exact>
+                  <route.component />
+                </Route>
+              );
+            })}
           </Switch>
         </div>
       </div>
