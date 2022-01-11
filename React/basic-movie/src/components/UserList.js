@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const UserList = ({ users }) => {
   return (
@@ -6,7 +7,9 @@ const UserList = ({ users }) => {
       {users.map((user) => {
         return (
           <div className="card mb-2" key={user.id}>
-            <div className="card-body p-3">{user.name}</div>
+            <div className="card-body p-3">
+              <Link to={`/users/${user.id}`}>{user.name}</Link>
+            </div>
           </div>
         );
       })}
