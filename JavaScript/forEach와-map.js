@@ -32,3 +32,11 @@ const mapArr = arr2.map((el) => el * 2);
 
 console.log(arr2); // [1, 2, 3]
 console.log(mapArr); // [2, 4, 6]
+
+// map string
+let map = Array.prototype.map;
+let string = map.call('Hello World', (el) => {
+  return el.toUpperCase();
+});
+
+console.log(string.join(' ')); // H E L L O   W O R L D
