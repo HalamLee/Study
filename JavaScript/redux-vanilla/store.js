@@ -3,22 +3,30 @@ const reduxLogger = require('redux-logger');
 const createStore = redux.createStore;
 const applyMiddleware = redux.applyMiddleware;
 const logger = reduxLogger.createLogger();
+const combineReducers = redux.combineReducers;
 
 // actions
 // action-types
 const ADD_SUBSCRIBER = 'ADD_SUBSCRIBER';
+const ADD_VIEWCOUNT = 'ADD_VIEWCOUNT';
+
 const addSubscriber = () => {
   return {
     type: ADD_SUBSCRIBER,
   };
 };
+const addViewCount = () => {
+  return {
+    type: ADD_VIEWCOUNT,
+  };
+};
 
 // reducers
-const initialState = {
+const subscriberState = {
   // state 초기 값
   subscribers: 365,
 };
-const reducer = (state = initialState, action) => {
+const subscriberReducer = (state = subscriberState, action) => {
   // state 없으면 설정한 초기 값 사용
   switch (
     action.type // switch문을 통해 핸들링
@@ -34,8 +42,28 @@ const reducer = (state = initialState, action) => {
   }
 };
 
+const viewState = {
+  viewCount: 100,
+};
+const viewReducer = (state = viewState, action) => {
+  switch (action.type) {
+    case ADD_VIEWCOUNT:
+      return {
+        ...state,
+        viewCount: state.viewCount + 1,
+      };
+    default:
+      return state;
+  }
+};
+
+const rootReducer = combineReducers({
+  view: viewReducer,
+  subscriber: subscriberReducer,
+});
+
 // store
-const store = createStore(reducer, applyMiddleware(logger));
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 // subscribe - view - dispatch
 
@@ -48,3 +76,5 @@ store.dispatch(addSubscriber());
 store.dispatch(addSubscriber());
 store.dispatch(addSubscriber());
 store.dispatch(addSubscriber());
+store.dispatch(addViewCount());
+store.dispatch(addViewCount());
