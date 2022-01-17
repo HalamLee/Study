@@ -15,17 +15,20 @@ console.log(fruits[fruits.length - 1]); // 🥝
 
 // 3. 배열에서 반복문 사용
 // 3-1. for문
+console.log(fruits); // [ '🍎', '🥝' ]
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]); // 🍎, 🥝
 }
 
 // 3-2. for of
+console.log(fruits); // [ '🍎', '🥝' ]
 for (let fruit of fruits) {
   console.log(fruit); // 🍎, 🥝
 }
 
 // 3-3. forEach
 // forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
+console.log(fruits); // [ '🍎', '🥝' ]
 fruits.forEach((fruit, index, array) => {
   console.log(fruit); // 🍎, 🥝
   console.log(fruit, index); // 🍎 0, 🥝 1
@@ -34,18 +37,22 @@ fruits.forEach((fruit, index, array) => {
 
 // 4. 추가, 삭제, 복사
 // push: 배열 맨끝에 값 추가
+console.log(fruits); // [ '🍎', '🥝' ]
 fruits.push('🍇', '🍑');
 console.log(fruits); // ['🍎', '🥝', '🍇', '🍑']
 
 // pop: 배열 맨끝에 있는 값 삭제
+console.log(fruits); // [ '🍎', '🥝', '🍇', '🍑' ]
 fruits.pop();
 console.log(fruits); // ['🍎', '🥝', '🍇']
 
 // unshift: 배열 맨앞에 값 추가
+console.log(fruits); // [ '🍎', '🥝', '🍇' ]
 fruits.unshift('🍓', '🍋');
 console.log(fruits); // ['strawberry', '🍋', '🍎', '🥝', '🍇']
 
 // shift: 배열 맨앞에 있는 값 삭제
+console.log(fruits); // [ '🍓', '🍋', '🍎', '🥝', '🍇' ]
 fruits.shift();
 console.log(fruits); // ['🍋', '🍎', '🥝', '🍇']
 
@@ -57,22 +64,27 @@ fruits.push('🍌', '🍉');
 console.log(fruits); // ['🍋', '🍎', '🥝', '🍇', '🍌', '🍉']
 
 // splice: 지정한 위치에 있는 값 삭제
+console.log(fruits); // ['🍋', '🍎', '🥝', '🍇', '🍌', '🍉']
 fruits.splice(1, 1); // 1번째 인덱스 하나 삭제
 console.log(fruits); // ['🍋', '🥝', '🍇', '🍌', '🍉']
 
+console.log(fruits); // ['🍋', '🥝', '🍇', '🍌', '🍉']
 fruits.splice(1, 1, '🍒', '🍈'); // 1번째 인덱스 삭제하고 그 자리에 값 추가
 console.log(fruits); // ['🍋',  '🍒', '🍈', '🍇', '🍌', '🍉']
 
+console.log(fruits); // ['🍋',  '🍒', '🍈', '🍇', '🍌', '🍉']
 fruits.splice(1); // 1번째 인덱스부터 끝까지 삭제
 console.log(fruits); // ['🍋']
 
 // concat: 두 가지 배열 합치기
+console.log(fruits); // ['🍋']
 const fruits2 = ['🍉', '🍏'];
 const newFruits = fruits.concat(fruits2);
 console.log(newFruits); // ['🍋', '🍉', '🍏']
 
 // 5. 검색
 // indexOf(): 해당 값이 처음 나오는 게 몇 번째 인덱스인지, 만약 해당 값이 없다면 -1 return
+console.log(newFruits); // ['🍋', '🍉', '🍏']
 console.log(newFruits.indexOf('🍉')); // 1
 console.log(newFruits.indexOf('🍓')); // -1
 
