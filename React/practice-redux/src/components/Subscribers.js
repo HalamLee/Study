@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const Subscribers = (props) => {
   return (
@@ -9,4 +10,10 @@ const Subscribers = (props) => {
   );
 };
 
-export default Subscribers;
+const mapStateToProps = (state) => {
+  return {
+    count: state.count,
+  };
+};
+
+export default connect(mapStateToProps)(Subscribers);
