@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 
 const Display = (props) => {
   return (
-    <div>
+    <div className="items">
       <p>구독자 수 : {props.count}</p>
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ subscribers }) => {
   return {
-    count: state.count,
+    count: subscribers.count,
   };
 };
 
