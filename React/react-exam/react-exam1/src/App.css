@@ -1,11 +1,4 @@
 .App {
-  background-color: black;
-}
-
-h2 {
-  color: red;
-}
-
-#bold_text {
-  color: green;
+  padding-top: 100px;
+  text-align: center;
 }
