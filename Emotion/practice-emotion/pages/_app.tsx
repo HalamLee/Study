@@ -1,20 +1,37 @@
-import '../styles/globals.css';
+import React from 'react';
 import type { AppProps } from 'next/app';
-import styled from '@emotion/styled';
+// import styled from '@emotion/styled';
+import { jsx, css, Global, ClassNames } from '@emotion/react';
 
-let SomeComp = styled.div({
-  color: 'hotpink',
-});
-
-let AnotherComp = styled.div`
-  color: ${(props) => props.color};
+const reactStyle = css`
+  color: red;
 `;
+
+const someStyle = css`
+  color: teal;
+`;
+
+const anotherStyle = css`
+  color: #8288;
+`;
+
+const SomeComp = ({ children }) => (
+  <div css={someStyle}>
+    {'SomeComp'}
+    {children}
+  </div>
+);
+
+const AnotherComp = () => <p css={anotherStyle}>AnotherComp</p>;
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <SomeComp>test</SomeComp>
-      <AnotherComp>test2</AnotherComp>
+      <div css={reactStyle}>{'React css Style'}</div>
+      <div css={{ color: 'blue' }}>{'React inline Style'}</div>
+      <SomeComp>
+        <AnotherComp />
+      </SomeComp>
     </>
   );
 }
