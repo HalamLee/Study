@@ -26,3 +26,10 @@ textarea {
   padding: 10px;
   cursor: pointer;
 }
+
+.DiaryEditor input:focus,
+.DiaryEditor textarea:focus {
+  outline: none;
+  border-color: red;
+  border-width: 2px;
+}
