@@ -3,44 +3,6 @@ import './App.css';
 import DiaryEditor from './DiaryEditor';
 import DiaryList from './DiaryList';
 
-// const dummyList = [
-//   {
-//     id: 1,
-//     author: 'Lami',
-//     content: 'hi',
-//     emotion: 5,
-//     created_date: new Date().getTime(),
-//   },
-//   {
-//     id: 2,
-//     author: 'Hong',
-//     content: 'sad',
-//     emotion: 1,
-//     created_date: new Date().getTime(),
-//   },
-//   {
-//     id: 3,
-//     author: 'Lee',
-//     content: 'good',
-//     emotion: 4,
-//     created_date: new Date().getTime(),
-//   },
-//   {
-//     id: 4,
-//     author: 'Kim',
-//     content: 'not bad',
-//     emotion: 3,
-//     created_date: new Date().getTime(),
-//   },
-//   {
-//     id: 5,
-//     author: 'Park',
-//     content: 'umm..',
-//     emotion: 2,
-//     created_date: new Date().getTime(),
-//   },
-// ];
-
 function App() {
   const [data, setData] = useState([]);
 
@@ -59,15 +21,23 @@ function App() {
     setData([newItem, ...data]);
   };
 
-  const onDelete = (targetId) => {
+  const onRemove = (targetId) => {
     const newDiaryList = data.filter((it) => it.id !== targetId);
     setData(newDiaryList);
+  };
+
+  const onEdit = (targetId, newContent) => {
+    setData(
+      data.map((it) =>
+        it.id === targetId ? { ...it, content: newContent } : it
+      )
+    );
   };
 
   return (
     <div className="App">
       <DiaryEditor onCreate={onCreate} />
-      <DiaryList onDelete={onDelete} diaryList={data} />
+      <DiaryList onEdit={onEdit} onRemove={onRemove} diaryList={data} />
     </div>
   );
 }
