@@ -34,3 +34,33 @@ body {
   /* font-family: 'Black Han Sans', sans-serif;
   font-family: 'Jua', sans-serif; */
 }
+
+/* MyButton */
+
+.MyButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding: 10px 20px;
+
+  font-size: 18px;
+
+  white-space: nowrap;
+  font-family: 'Jua', sans-serif;
+}
+
+.MyButton_default {
+  background-color: #ececec;
+  color: black;
+}
+
+.MyButton_positive {
+  background-color: #64c964;
+  color: white;
+}
+
+.MyButton_negative {
+  background-color: #fd565f;
+  color: white;
+}
