@@ -53,6 +53,27 @@ const Diary = () => {
             />
           }
         />
+        <article>
+          <section>
+            <h4>오늘의 감정</h4>
+            <div
+              className={[
+                'diary_img_wrapper',
+                `diary_img_wrapper_${data.emotion}`,
+              ].join(' ')}>
+              <img src={curEmotionData.emotion_img} />
+              <div className="emotion_descript">
+                {curEmotionData.emotion_descript}
+              </div>
+            </div>
+          </section>
+          <section>
+            <h4>오늘의 일기</h4>
+            <div className="diary_content_wrapper">
+              <p>{data.content}</p>
+            </div>
+          </section>
+        </article>
       </div>
     );
   }
