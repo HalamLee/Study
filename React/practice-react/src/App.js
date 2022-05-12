@@ -1,68 +1,20 @@
-const list = ['lee', 'kim', 'park'];
-
-const show1 = () => list.map((name, index) => <span key={index}>{name}</span>);
-
-const show2 = () => {
-  list.map((name, index) => <span key={index}>{name}</span>);
-};
-
-const show3 = () => {
-  return list.map((name, index) => <span key={index}>{name}</span>);
-};
-
-const show4 = () => {
-  list.map((name, index) => {
-    <span key={index}>{name}</span>;
-  });
-};
-
-const show5 = () => {
-  return list.map((name, index) => {
-    <span key={index}>{name}</span>;
-  });
-};
-
-const show6 = () => {
-  return list.map((name, index) => {
-    return <span key={index}>{name}</span>;
-  });
-};
-
-const show7 = () => {
-  list.map((name, index) => {
-    return <span key={index}>{name}</span>;
-  });
-};
-
-const show8 = () =>
-  list.map((name, index) => {
-    <span key={index}>{name}</span>;
-  });
-
-const show9 = () =>
-  list.map((name, index) => {
-    return <span key={index}>{name}</span>;
-  });
-
-const show10 = list.map((name, index) => <span key={index}>{name}</span>);
-
-const show11 = list.map((name, index) => {
-  <span key={index}>{name}</span>;
-});
-
-const show12 = list.map((name, index) => {
-  return <span key={index}>{name}</span>;
-});
+import React, { useState } from 'react';
+import Modal from './Modal';
 
 function App() {
+  const [isOpne, setIsOpen] = useState(false);
+  const modalOpen = () => {
+    setIsOpen(!isOpne);
+  };
   return (
     <>
-      {show1()}
-      {show3()}
-      {show6()}
-      {show9()}
-      {show10}
-      {show12}
+      <button onClick={modalOpen}>open</button>
+      {isOpne && (
+        <Modal>
+          <h1>modal test</h1>
+          <button onClick={modalOpen}>close</button>
+        </Modal>
+      )}
     </>
   );
 }
