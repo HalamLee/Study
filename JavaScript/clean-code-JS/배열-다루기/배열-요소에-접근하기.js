@@ -30,3 +30,17 @@ function formatDate(targetDate) {
 
   return `${year}년 ${month}월 ${day}일`;
 }
+
+// 유틸함수를 만들어서 사용하는 방법도 있다.
+
+function head(arr) {
+  return arr[0] ?? '';
+}
+
+function formatDate3(targetDate) {
+  const date = head(targetDate.toISOString().split('T')); // 유틸함수 사용
+
+  const [year, month, day] = date.split('-');
+
+  return `${year}년 ${month}월 ${day}일`;
+}
