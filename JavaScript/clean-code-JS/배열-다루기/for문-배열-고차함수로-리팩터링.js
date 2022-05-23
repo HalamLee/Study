@@ -39,7 +39,7 @@ function getWonPrice3(priceList) {
   const isOverList = priceList.filter(isOverOneThousand); // 1000원 초과 리스트만 출력
   const sortList = isOverList.sort(ascendingList); // 가격 순 정렬
 
-  return isOverList.map(suffixWon);
+  return sortList.map(suffixWon);
 }
 
 const result = getWonPrice3(price);
