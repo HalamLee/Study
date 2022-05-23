@@ -33,14 +33,15 @@ console.log(getWonPrice2(price)); // [ '2000원', '1000원', '3000원', '5000원
 
 const suffixWon = (price) => price + '원'; // 원화 표기
 const isOverOneThousand = (price) => Number(price) > 1000; // 1000원 초과 리스트만 출력
+const ascendingList = (a, b) => a - b; // 정렬
 
 function getWonPrice3(priceList) {
   const isOverList = priceList.filter(isOverOneThousand); // 1000원 초과 리스트만 출력
-  const sortList = priceList.filter(isOverOneThousand);
+  const sortList = isOverList.sort(ascendingList); // 가격 순 정렬
 
   return isOverList.map(suffixWon);
 }
 
 const result = getWonPrice3(price);
 
-console.log(result);
+console.log(result); // [ '2000원', '3000원', '4000원', '5000원' ]
