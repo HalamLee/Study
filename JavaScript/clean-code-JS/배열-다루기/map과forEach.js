@@ -24,3 +24,12 @@ console.log(newPricesMap); // [ '1000원', '2000원', '3000원' ]
 
 prices.forEach((price) => console.log(price + '원'));
 prices.map((price) => console.log(price + '원'));
+
+// 1000원
+// 2000원
+// 3000원
+// 1000원
+// 2000원
+// 3000원
+
+// forEach와 map 모두 잘 출력을 했지만 이 상황과 같이 단순히 함수를 실행시켜 return 할 필요가 없다면 map이 아니라 forEach를 사용해야 한다.
