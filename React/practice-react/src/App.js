@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 import Counter from './Counter';
+import Todo from './Todo';
 
 function App() {
   const [isOpne, setIsOpen] = useState(false);
@@ -9,14 +10,15 @@ function App() {
   };
   return (
     <>
-      <button onClick={modalOpen}>open</button>
+      {/* <button onClick={modalOpen}>open</button>
       {isOpne && (
         <Modal>
           <h1>modal test</h1>
           <button onClick={modalOpen}>close</button>
         </Modal>
       )}
-      <Counter />
+      <Counter /> */}
+      <Todo />
     </>
   );
 }
