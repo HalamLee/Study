@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from './Modal';
 import Counter from './Counter';
 import Todo from './Todo';
+import LectureTodo from './lecture/Todo';
 
 function App() {
   const [isOpne, setIsOpen] = useState(false);
@@ -18,7 +19,8 @@ function App() {
         </Modal>
       )}
       <Counter /> */}
-      <Todo />
+      {/* <Todo /> */}
+      <LectureTodo />
     </>
   );
 }
