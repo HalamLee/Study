@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
+import Counter from './Counter';
 
 function App() {
   const [isOpne, setIsOpen] = useState(false);
@@ -15,6 +16,7 @@ function App() {
           <button onClick={modalOpen}>close</button>
         </Modal>
       )}
+      <Counter />
     </>
   );
 }
