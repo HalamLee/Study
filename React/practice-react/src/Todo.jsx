@@ -97,6 +97,12 @@ const AddButton = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  &:hover {
+    width: 54px;
+    background-color: white;
+    color: #59a4e5;
+    border: 3px solid #59a4e5;
+  }
 `;
 
 const TodoListItem = styled.div`
@@ -114,4 +120,9 @@ const DelButton = styled(AddButton)`
   background-color: white;
   border: 3px solid #59a4e5;
   color: #59a4e5;
+  &:hover {
+    width: 60px;
+    background-color: #59a4e5;
+    color: white;
+  }
 `;
