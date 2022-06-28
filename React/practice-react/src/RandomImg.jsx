@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 function RandomImg() {
   const baseUrl = 'https://i.ibb.co/M5mVx6H/image.jpg';
@@ -27,7 +27,7 @@ function RandomImg() {
   return (
     <Wrapper>
       <Container>
-        <Thumbnail color={'red'} url={randomUrl}>
+        <Thumbnail url={randomUrl}>
           {randomUrl !== baseUrl && (
             <Blur>
               <Title>Plinic</Title>
