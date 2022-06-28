@@ -3,12 +3,13 @@ import Modal from './Modal';
 import Counter from './Counter';
 import Todo from './Todo';
 import LectureTodo from './lecture/Todo';
+import RandomImg from './RandomImg';
 
 function App() {
-  const [isOpne, setIsOpen] = useState(false);
-  const modalOpen = () => {
-    setIsOpen(!isOpne);
-  };
+  // const [isOpne, setIsOpen] = useState(false);
+  // const modalOpen = () => {
+  //   setIsOpen(!isOpne);
+  // };
   return (
     <>
       {/* <button onClick={modalOpen}>open</button>
@@ -17,10 +18,11 @@ function App() {
           <h1>modal test</h1>
           <button onClick={modalOpen}>close</button>
         </Modal>
-      )}
-      <Counter /> */}
+      )} */}
+      {/* <Counter /> */}
       {/* <Todo /> */}
-      <LectureTodo />
+      {/* <LectureTodo /> */}
+      <RandomImg />
     </>
   );
 }
