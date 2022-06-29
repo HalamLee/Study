@@ -4,38 +4,59 @@ import styled from 'styled-components';
 function Counter() {
   const [count, setCount] = useState(0);
 
-  const plus = () => {
+  const increaseOne = () => {
     setCount(count + 1);
   };
 
-  const minus = () => {
+  const increaseTwo = () => {
+    setCount(count + 2);
+  };
+
+  const decreaseOne = () => {
     setCount(count - 1);
   };
 
+  const decreaseTwo = () => {
+    setCount(count - 2);
+  };
+
   return (
-    <>
-      <ButtonBox>
-        <button onClick={plus}>Plus</button>
-        <button onClick={minus}>Minus</button>
-      </ButtonBox>
-      <Box>Count: {count}</Box>
-    </>
+    <Wrapper>
+      <Container>
+        <Button onClick={decreaseTwo}>-2</Button>
+        <Button onClick={decreaseOne}>-1</Button>
+        <h1>{count}</h1>
+        <Button onClick={increaseOne}>+1</Button>
+        <Button onClick={increaseTwo}>+2</Button>
+      </Container>
+    </Wrapper>
   );
 }
 
 export default Counter;
 
-const ButtonBox = styled.div`
-  width: 300px;
-  height: fit-content;
-  margin: 30px 0;
+const Center = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 `;
 
-const Box = styled.div`
-  width: 150px;
-  height: 200px;
-  text-align: center;
-  background-color: palevioletred;
+const Wrapper = styled(Center)`
+  width: 100vw;
+  height: 100vh;
+`;
+
+const Container = styled(Center)`
+  width: 400px;
+  height: 400px;
+  border: 5px solid #32619bed;
+  justify-content: space-around;
+`;
+
+const Button = styled.button`
+  width: 40px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 `;

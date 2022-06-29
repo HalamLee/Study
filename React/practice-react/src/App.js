@@ -19,10 +19,10 @@ function App() {
           <button onClick={modalOpen}>close</button>
         </Modal>
       )} */}
-      {/* <Counter /> */}
+      <Counter />
       {/* <Todo /> */}
       {/* <LectureTodo /> */}
-      <RandomImg />
+      {/* <RandomImg /> */}
     </>
   );
 }
