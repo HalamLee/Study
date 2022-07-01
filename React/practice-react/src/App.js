@@ -4,6 +4,7 @@ import Counter from './Counter';
 import Todo from './Todo';
 import LectureTodo from './lecture/Todo';
 import RandomImg from './RandomImg';
+import Color from './color/Color';
 
 function App() {
   // const [isOpne, setIsOpen] = useState(false);
@@ -19,7 +20,8 @@ function App() {
           <button onClick={modalOpen}>close</button>
         </Modal>
       )} */}
-      <Counter />
+      {/* <Counter /> */}
+      <Color />
       {/* <Todo /> */}
       {/* <LectureTodo /> */}
       {/* <RandomImg /> */}
