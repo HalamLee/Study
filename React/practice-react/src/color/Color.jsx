@@ -1,20 +1,37 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
-import ColorList from './ColorList';
+// import ColorList from './ColorList';
 
 function Color() {
   const [colors, setColors] = useState([]);
+  const tempData = [];
+
   const getColors = () => {
     for (let i = 0; i < 5; i++) {
-      setColors(Math.floor(Math.random() * 1001));
+      const randomRGB = [];
+      const randomOneColor = [];
+      for (let j = 0; j < 3; j++) {
+        const randomNum = Math.floor(Math.random() * 256);
+        randomOneColor.push(randomNum);
+      }
+      randomRGB.push([randomOneColor]);
+      const url = `https://www.thecolorapi.com/id?rgb=rgb(${randomRGB})`;
+      axios.get(url).then((res) => {
+        tempData.push({
+          colorCode: res.data.hex.value,
+          colorName: res.data.name.value,
+        });
+      });
     }
-    console.log(colors);
+    setColors(tempData);
+    console.log('colors :>> ', colors);
+    colors.map((color) => console.log('color.colorCode', color.colorCode));
   };
 
   return (
     <Wrapper>
       <Container>
-        <ColorList color={'0,32,171'} />
         <Button onClick={getColors}>Get Colors</Button>
       </Container>
     </Wrapper>
@@ -40,6 +57,12 @@ const Container = styled(Center)`
   border: 5px solid #32619bed;
   justify-content: space-around;
   flex-direction: column;
+`;
+
+const ColorList = styled.div`
+  width: 100px;
+  height: 150px;
+  background-color: yellow;
 `;
 
 const Button = styled.button`
