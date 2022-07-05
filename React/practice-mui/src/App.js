@@ -1,12 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PracticeMui from './PracticeMui';
-import LogIn from './LogIn';
 
 export default function App() {
-  return (
-    <>
-      {/* <PracticeMui /> */}
-      <LogIn />
-    </>
-  );
+  return <PracticeMui />;
 }

@@ -32,11 +32,6 @@ function Color() {
   return (
     <Wrapper>
       <Container>
-        {/* {colors}
-        {colors.map((color) => (
-          <div>{color.colorCode}</div>
-        ))} */}
-        {/* <ColorList colors={colors} /> */}
         <Button onClick={getColors}>Get Colors</Button>
       </Container>
     </Wrapper>

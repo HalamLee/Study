@@ -21,8 +21,8 @@ function App() {
         </Modal>
       )} */}
       {/* <Counter /> */}
-      {/* <Color /> */}
-      <Todo />
+      <Color />
+      {/* <Todo /> */}
       {/* <LectureTodo /> */}
       {/* <RandomImg /> */}
     </>
