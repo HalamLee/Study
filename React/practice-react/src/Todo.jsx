@@ -36,7 +36,7 @@ function Todo() {
         <InputBox>
           <TodoInput
             type={'text'}
-            placeholder="할일을 입력하세요."
+            placeholder="할 일을 입력하세요."
             onChange={getTodo}
             value={todo}
             onKeyDown={keyDown}
@@ -45,13 +45,15 @@ function Todo() {
         </InputBox>
         <div>
           <h1>Todo List</h1>
-          {todos &&
-            todos.map((list) => (
-              <TodoListItem key={list.id} id={list.id}>
-                <span>{list.todo}</span>
-                <DelButton onClick={delTodo}>삭제</DelButton>
-              </TodoListItem>
-            ))}
+          <TodoList>
+            {todos &&
+              todos.map((list) => (
+                <TodoListItem key={list.id} id={list.id}>
+                  <span>{list.todo}</span>
+                  <DelButton onClick={delTodo}>삭제</DelButton>
+                </TodoListItem>
+              ))}
+          </TodoList>
         </div>
       </Container>
     </Wrapper>
@@ -104,6 +106,23 @@ const AddButton = styled.div`
     background-color: white;
     color: #59a4e5;
     border: 3px solid #59a4e5;
+  }
+`;
+
+const TodoList = styled.div`
+  width: 520px;
+  height: 400px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #4a7091;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #59a4e5;
+    border-radius: 10px;
   }
 `;
 
