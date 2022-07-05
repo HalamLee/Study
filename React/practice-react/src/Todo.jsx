@@ -7,9 +7,11 @@ function Todo() {
   const [todo, setTodo] = useState('');
 
   const addTodo = () => {
-    setId(id + 1);
-    setTodos([...todos, { id: id, todo: todo }]);
-    setTodo('');
+    if (todo !== '') {
+      setId(id + 1);
+      setTodos([...todos, { id: id, todo: todo }]);
+      setTodo('');
+    }
   };
 
   const delTodo = (e) => {
