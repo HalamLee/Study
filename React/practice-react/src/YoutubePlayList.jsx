@@ -42,8 +42,8 @@ function YoutubePlayList() {
           height="360"
           src={
             playing
-              ? `https://www.youtube.com/embed/${playing}?list=TLGGm25RGvc1fywwNjA3MjAyMg`
-              : 'https://www.youtube.com/embed/K2MfpA_4EEs?list=TLGGm25RGvc1fywwNjA3MjAyMg'
+              ? `https://www.youtube.com/embed/${playing}?autoplay=1&mute=1?list=TLGGm25RGvc1fywwNjA3MjAyMg`
+              : 'https://www.youtube.com/embed/K2MfpA_4EEs?autoplay=1&mute=1?list=TLGGm25RGvc1fywwNjA3MjAyMg'
           }
           title="지금 당장 달빛 무지개 분수 보러갈 사람 모집합니다🌈💜 [ 𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 ]"
           frameBorder="0"
