@@ -5,6 +5,7 @@ import Todo from './Todo';
 import LectureTodo from './lecture/Todo';
 import RandomImg from './RandomImg';
 import Color from './color/Color';
+import YoutubePlayList from './YoutubePlayList';
 
 function App() {
   // const [isOpne, setIsOpen] = useState(false);
@@ -21,8 +22,9 @@ function App() {
         </Modal>
       )} */}
       {/* <Counter /> */}
-      <Color />
+      {/* <Color /> */}
       {/* <Todo /> */}
+      <YoutubePlayList />
       {/* <LectureTodo /> */}
       {/* <RandomImg /> */}
     </>
