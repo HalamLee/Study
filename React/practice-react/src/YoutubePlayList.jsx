@@ -37,18 +37,20 @@ function YoutubePlayList() {
   return (
     <Wrapper>
       <Container>
-        <iframe
-          width="600"
-          height="360"
-          src={
-            playing
-              ? `https://www.youtube.com/embed/${playing}?autoplay=1&mute=1?list=TLGGm25RGvc1fywwNjA3MjAyMg`
-              : 'https://www.youtube.com/embed/K2MfpA_4EEs?autoplay=1&mute=1?list=TLGGm25RGvc1fywwNjA3MjAyMg'
-          }
-          title="지금 당장 달빛 무지개 분수 보러갈 사람 모집합니다🌈💜 [ 𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 ]"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen></iframe>
+        <VideoFrame>
+          <iframe
+            width="600"
+            height="360"
+            src={
+              playing
+                ? `https://www.youtube.com/embed/${playing}?autoplay=1&mute=1?list=TLGGm25RGvc1fywwNjA3MjAyMg`
+                : 'https://www.youtube.com/embed/K2MfpA_4EEs?autoplay=1&mute=1?list=TLGGm25RGvc1fywwNjA3MjAyMg'
+            }
+            title="지금 당장 달빛 무지개 분수 보러갈 사람 모집합니다🌈💜 [ 𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 ]"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen></iframe>
+        </VideoFrame>
         <PlayList>
           <PlayListHeader>
             <span>플레이리스트</span>
@@ -83,6 +85,13 @@ const Container = styled(Center)`
   height: 600px;
   flex-direction: column;
   justify-content: space-around;
+`;
+
+const VideoFrame = styled.div`
+  width: 600px;
+  height: 360px;
+  border-radius: 20px;
+  overflow: hidden;
 `;
 
 const PlayList = styled.div`
